@@ -11,7 +11,6 @@
 
 </div>
 
----
 
 ## ⚡ Install (Arch Linux)
 
@@ -28,7 +27,6 @@ cmake --build build --parallel
 ./build/noxwm
 ```
 
----
 
 ## 🎨 Customization
 
@@ -38,7 +36,6 @@ All customization is done by editing source files and recompiling. After **any**
 cmake --build build --parallel
 ```
 
----
 
 ### 🖥️ Terminal
 
@@ -52,7 +49,6 @@ terminal = "alacritty";
 terminal = "ghostty";
 ```
 
----
 
 ### 🪟 Layout & Gaps
 
@@ -69,7 +65,6 @@ master_ratio = 0.55f;   // how much width the master window takes (0.0 - 1.0)
 | `0.65f` | Bigger master pane |
 | `0.4f` | Smaller master, more stack room |
 
----
 
 ### 🎨 Colors
 
@@ -96,7 +91,6 @@ active_border = {0.67f, 0.42f, 0.42f, 1.0f};
 active_border = {0.91f, 0.40f, 0.23f, 1.0f};
 ```
 
----
 
 ### ⌨️ Keybindings
 
@@ -130,7 +124,6 @@ Common keysym names:
 | F1–F12 | `XKB_KEY_F1` – `XKB_KEY_F12` |
 | Arrows | `XKB_KEY_Left` `XKB_KEY_Right` `XKB_KEY_Up` `XKB_KEY_Down` |
 
----
 
 ### 🔲 Border Width
 
@@ -139,8 +132,6 @@ Open `src/config.cpp`:
 ```cpp
 border_width = 2;   // px — set to 0 for no borders
 ```
-
----
 
 ### 🚀 Autostart
 
@@ -152,8 +143,6 @@ spawn("dunst");
 spawn("swww-daemon");
 ```
 
----
-
 ## ⌨️ Default Keybindings
 
 | Keybind | Action |
@@ -164,7 +153,6 @@ spawn("swww-daemon");
 | `Super + K` | Focus previous |
 | `Super + Shift + Q` | Exit |
 
----
 
 ## 🗂 Structure
 
@@ -175,16 +163,7 @@ scripts/      → build helpers
 docs/         → keybindings reference
 ```
 
----
-
 ## 🔗 Related
 
 - [noxwmctl](https://github.com/noxwm/noxwmctl) — IPC client for noxwm
 
----
-
-<div align="center">
-
-made with 🖤 on Arch Linux
-
-</div>

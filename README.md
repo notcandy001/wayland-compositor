@@ -9,7 +9,7 @@
 <br/>
 
 [![GitHub Stars](https://img.shields.io/github/stars/yourname/noxwm?style=for-the-badge&logo=github&logoColor=white&labelColor=0d0d0d&color=e8673a)](https://github.com/notcandy001/noxwm/stargazers)
-[![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&labelColor=0d0d0d&color=5865f2)](LICENSE)
+[![License](https://img.shields.io/badge/license-AGPL-blue?style=for-the-badge&labelColor=0d0d0d&color=5865f2)](LICENSE)
 [![Built With](https://img.shields.io/badge/built%20with-wlroots%200.17-orange?style=for-the-badge&labelColor=0d0d0d&color=e8673a)](https://gitlab.freedesktop.org/wlroots/wlroots)
 
 </div>

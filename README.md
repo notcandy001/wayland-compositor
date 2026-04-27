@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/yourname/noxwm/main/docs/logo.png" width="180"/>
+<!--<img src="https://raw.githubusercontent.com/yourname/noxwm/main/docs/logo.png" width="180"/> -->
 
 # noxwm
 
@@ -8,25 +8,13 @@
 
 <br/>
 
-[![GitHub Stars](https://img.shields.io/github/stars/yourname/noxwm?style=for-the-badge&logo=github&logoColor=white&labelColor=0d0d0d&color=e8673a)](https://github.com/yourname/noxwm/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/yourname/noxwm?style=for-the-badge&logo=github&logoColor=white&labelColor=0d0d0d&color=e8673a)](https://github.com/notcandy001/noxwm/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&labelColor=0d0d0d&color=5865f2)](LICENSE)
 [![Built With](https://img.shields.io/badge/built%20with-wlroots%200.17-orange?style=for-the-badge&labelColor=0d0d0d&color=e8673a)](https://gitlab.freedesktop.org/wlroots/wlroots)
 
 </div>
 
------
-
-<div align="center">
-
-📸 Screenshots
-
-</div>
-
------
-
-> screenshots go here
-
------
+----
 
 ## ⚡ Install (Arch Linux)
 
@@ -36,7 +24,7 @@ sudo pacman -S cmake pkgconf wlroots wayland wayland-protocols \
 ```
 
 ```bash
-git clone https://github.com/yourname/noxwm
+git clone https://github.com/notcandy001/noxwm
 cd noxwm
 cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --parallel

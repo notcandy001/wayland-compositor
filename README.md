@@ -13,18 +13,6 @@
 
 ---
 
-<div align="center">
-
-📸 Screenshots
-
-</div>
-
----
-
-> screenshots go here
-
----
-
 ## ⚡ Install (Arch Linux)
 
 ```bash

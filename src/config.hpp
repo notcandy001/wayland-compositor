@@ -8,7 +8,7 @@ struct Config {
     uint32_t mod_key = 0; // filled at runtime from xkb
 
     // Terminal to launch
-    std::string terminal = "alacritty";
+    std::string terminal = "kitty";
 
     // Border width (px)
     int border_width = 2;

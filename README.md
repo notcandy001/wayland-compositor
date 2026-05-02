@@ -1,109 +1,86 @@
-<div align="center">
-
-
 # noctis
 
-*A **Cxtremely** minimal tiling Wayland compositor.*
+Minimal tiling Wayland compositor. Clean, fast, no bloat.
 
-<br/>
+## Features
 
+- Master-stack tiling layout
+- `.nox` config format — no quotes, no brackets, just clean `key = value`
+- Wallpaper via `swww`
+- Autostart support
+- Custom keybinds
 
-</div>
+## Dependencies
 
-
-## ⚡ Install (Arch Linux)
-
+Arch:
 ```bash
-sudo pacman -S cmake pkgconf wlroots wayland wayland-protocols \
-               libxkbcommon libinput pixman tomlplusplus
+pacman -S wlroots wayland wayland-protocols libxkbcommon pixman swww
 ```
 
+## Build
+
 ```bash
-git clone https://github.com/noxwm/noctis
-cd noctis
 cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --parallel
-./build/noctis
 ```
 
-## 🎨 Configuration
-
-Copy the default config to get started:
+## Setup
 
 ```bash
 mkdir -p ~/.config/noctis
-cp config/config.toml ~/.config/noctis/config.toml
+cp config/config.nox ~/.config/noctis/
+cp config/wallpaper.jpg ~/.config/noctis/
+./build/noctis
 ```
 
-Then edit `~/.config/noctis/config.toml` — changes apply on next start.
+## Config — `~/.config/noctis/config.nox`
 
-```toml
-[general]
-terminal     = "kitty"
-gap          = 6
-master_ratio = 0.55
-border_width = 2
+```
+general {
+    terminal     = kitty
+    gap          = 6
+    master_ratio = 0.55
+    border_width = 2
+    wallpaper    = ~/.config/noctis/wallpaper.jpg
+}
 
-[colors]
-background      = "#1a1a26"
-active_border   = "#AB6C6A"
-inactive_border = "#333333"
+colors {
+    background      = #1a1a26
+    active_border   = #AB6C6A
+    inactive_border = #333333
+}
 
-[autostart]
-apps = ["waybar", "dunst"]
+autostart {
+    exec = waybar
+    exec = dunst
+}
 
-[keybinds]
-"Super+Return"  = "exec:kitty"
-"Super+Q"       = "close"
-"Super+J"       = "focus_next"
-"Super+K"       = "focus_prev"
-"Super+Shift+Q" = "exit"
+bind = SUPER, Return, exec, kitty
+bind = SUPER, Q, close
+bind = SUPER, J, focus_next
+bind = SUPER, K, focus_prev
+bind = SUPER SHIFT, Q, exit
 ```
 
-## 🖼 Themes
+## Default Keybinds
 
-Ready-made themes are in the `examples/` folder:
+| Keys              | Action          |
+|-------------------|-----------------|
+| Super + Return    | Launch terminal |
+| Super + Q         | Close window    |
+| Super + J         | Focus next      |
+| Super + K         | Focus prev      |
+| Super + Shift + Q | Exit            |
 
-| File | Theme |
-|:---|:---|
-| `noxwm-default.toml` | noxwm rose (default) |
-| `catppuccin-mocha.toml` | Catppuccin Mocha |
-| `nord.toml` | Nord |
-| `gruvbox.toml` | Gruvbox Dark |
-| `rose-pine.toml` | Rosé Pine |
-| `minimal-no-gaps.toml` | Minimal, no gaps, no borders |
+## Themes
 
-Apply one:
+See `examples/` — copy any `.nox` file to `~/.config/noctis/config.nox`.
+
+## TTY / Seat permissions
+
 ```bash
-cp examples/catppuccin-mocha.toml ~/.config/noctis/config.toml
+pacman -S seatd
+systemctl enable --now seatd
+usermod -aG seat $USER
+# re-login then run noctis
 ```
-
-
-## ⌨️ Keybindings
-
-| Keybind | Action |
-|:---|:---|
-| `Super + Enter` | Launch kitty |
-| `Super + Q` | Close window |
-| `Super + J` | Focus next |
-| `Super + K` | Focus previous |
-| `Super + Shift + Q` | Exit |
-
-See [`docs/keybindings.md`](docs/keybindings.md) for full reference.
-
-
-## 🗂 Structure
-
-```
-src/          → compositor source
-protocols/    → xdg-shell generated headers
-config/       → default config.toml
-examples/     → ready-made themes
-scripts/      → build helpers
-docs/         → keybindings reference
-```
-
-## 🔗 Related
-
-- [noctctl](https://github.com/noxwm/noctctl) — IPC client for noctis
-

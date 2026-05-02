@@ -1,3 +1,0 @@
-/home/user0/noctis/build/CMakeFiles/noctis.dir
-/home/user0/noctis/build/CMakeFiles/edit_cache.dir
-/home/user0/noctis/build/CMakeFiles/rebuild_cache.dir
